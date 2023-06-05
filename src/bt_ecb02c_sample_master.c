@@ -28,7 +28,7 @@ static const bt_cfg_t cfg =
     .mode       = BT_MODE_MASTER,
     .power      = BT_PWR_3dB,
     .pwd        = RT_NULL,
-    .slave      = "ecb02c_mst",
+    .slave      = "ecb02c_slv",
 };
 
 static char bt_ecb20c_buf[256];

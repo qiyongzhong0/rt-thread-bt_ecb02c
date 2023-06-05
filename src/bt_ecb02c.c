@@ -49,7 +49,7 @@ static void bt_pins_deinit(bt_dev_t dev)
     }
 }
 
-static int bt_pin_set_sleep(bt_dev_t dev, bool enable)
+static int bt_pin_set_sleep(bt_dev_t dev, int enable)
 {
     if (dev->cfg->sleep < 0)
     {
@@ -600,7 +600,7 @@ static int bt_reset(bt_dev_t dev)
         return(-RT_ERROR);
     }
     
-    bt_pin_set_sleep(dev, false);
+    bt_pin_set_sleep(dev, 0);
     dev->status = BT_STA_CFG;
 
     LOG_E("BT reset success.");
@@ -615,7 +615,7 @@ static int bt_sleep(bt_dev_t dev)
         return(-RT_ERROR);
     }
     
-    int rst = bt_pin_set_sleep(dev, false);
+    int rst = bt_pin_set_sleep(dev, 0);
     if (rst == RT_EOK)
     {
         dev->status = BT_STA_SLEEP;
@@ -632,7 +632,7 @@ static int bt_wackup(bt_dev_t dev)
         return(RT_EOK);
     }
     
-    int rst = bt_pin_set_sleep(dev, false);
+    int rst = bt_pin_set_sleep(dev, 0);
     if (rst == RT_EOK)
     {
         LOG_D("BT wakeup success.");
@@ -763,7 +763,7 @@ int bt_open(bt_dev_t dev)//打开
     }
     
     dev->status = BT_STA_CFG;
-    bt_pin_set_sleep(dev, false);
+    bt_pin_set_sleep(dev, 0);
     if (bt_thread_create(dev) != RT_EOK)
     {
         return(-RT_ERROR);
@@ -789,7 +789,7 @@ int bt_close(bt_dev_t dev)//关闭
         rt_thread_delete(tid);
     }
 
-    bt_pin_set_sleep(dev, true);
+    bt_pin_set_sleep(dev, 1);
     dev->status = BT_STA_CLOSE;
 
     LOG_D("BT close success.");

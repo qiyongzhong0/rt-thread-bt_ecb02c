@@ -12,8 +12,8 @@
 #include <rtconfig.h>
 
 //#define BT_ECB02C_USING_TEST
-//#define BT_ECB02C_USING_SAMPLE_SLAVE
 //#define BT_ECB02C_USING_SAMPLE_MASTER
+//#define BT_ECB02C_USING_SAMPLE_SLAVE
 
 #define BT_ECB02C_BAUDRATE          115200  //串口波特率
 #define BT_ECB02C_BYTE_TMO_MS       5       //字节超时
