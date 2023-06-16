@@ -12,7 +12,7 @@
 #include <stddef.h>
 #include <string.h>
 
-#define DBG_TAG "bt.ecb20c"
+#define DBG_TAG "bt.ecb02c"
 #define DBG_LVL DBG_LOG //DBG_INFO  //
 #include <rtdbg.h>
 

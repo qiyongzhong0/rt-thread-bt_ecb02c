@@ -12,7 +12,7 @@
 
 #include <drv_common.h>
 
-#define DBG_TAG "bt.ecb20c.slave"
+#define DBG_TAG "bt.ecb02c.slave"
 #define DBG_LVL DBG_LOG //DBG_INFO  //
 #include <rtdbg.h>
 
@@ -31,13 +31,13 @@ static const bt_cfg_t cfg =
     .slave      = RT_NULL,
 };
 
-static char bt_ecb20c_buf[256];
+static char bt_ecb02c_buf[256];
 
 static rt_err_t bt_ecb02c_recv_ind_hook(rt_device_t dev, rt_size_t size)
 {
-    int len = bt_read((bt_dev_t)dev, -1, bt_ecb20c_buf, sizeof(bt_ecb20c_buf));
+    int len = bt_read((bt_dev_t)dev, -1, bt_ecb02c_buf, sizeof(bt_ecb02c_buf));
     LOG_D("recv data length = %d", len);
-    bt_write((bt_dev_t)dev, -1, bt_ecb20c_buf, len);
+    bt_write((bt_dev_t)dev, -1, bt_ecb02c_buf, len);
 
     return(RT_EOK);
 }
