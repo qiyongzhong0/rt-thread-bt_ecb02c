@@ -102,7 +102,6 @@ typedef struct{
 
 | 参数宏 | 说明 |
 | ---- | ---- |
-| BT_ECB02C_USING_TEST          | 使用测试功能
 | BT_ECB02C_USING_SAMPLE_MASTER | 使用主机示例
 | BT_ECB02C_USING_SAMPLE_SLAVE  | 使用从机示例
 

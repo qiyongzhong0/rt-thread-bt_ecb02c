@@ -11,7 +11,6 @@
 
 #include <rtconfig.h>
 
-//#define BT_ECB02C_USING_TEST
 //#define BT_ECB02C_USING_SAMPLE_MASTER
 //#define BT_ECB02C_USING_SAMPLE_SLAVE
 
